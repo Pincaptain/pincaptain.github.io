@@ -1,0 +1,83 @@
+body {
+    background: #000;
+    overflow: hidden;
+}
+
+@keyframes stretch {
+    0% {
+        height: 00px;
+        transform: scale(1, 1);
+    }
+
+    100% {
+        height: 300px;
+        transform: scale(0.95, 1);
+    }
+}
+
+@keyframes stretch-ball {
+    0% {
+        bottom: -50px;
+        transform: scale(1, 1);
+    }
+
+    100% {
+        bottom: -55.55556px;
+        transform: scale(0.8, 1.05);
+    }
+}
+
+.goo {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #20C20E;
+    border-radius: -20px;
+    left: 50%;
+    margin-left: -50px;
+    animation: stretch 2s infinite ease-in-out alternate-reverse;
+}
+
+.ball {
+    position: absolute;
+    bottom: -50px;
+    animation: stretch-ball 2s infinite ease-in-out alternate-reverse;
+    width: 100%;
+    height: 100px;
+    background: #20C20E;
+    border-radius: 100%;
+    z-index: 3;
+}
+
+@keyframes stretch-curve {
+    0% {
+        transform: scale(0, 1);
+    }
+
+    100% {
+        transform: scale(1, 1.05);
+    }
+}
+
+.goo:before,
+.goo:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: #000;
+    width: 70px;
+    border-radius: 100%;
+    z-index: 2;
+    transform-origin: 50% 0;
+    animation: stretch-curve 2s infinite ease-in-out alternate-reverse;
+}
+
+.goo:before {
+    left: -35px;
+}
+
+.goo:after {
+    right: -35px;
+}
