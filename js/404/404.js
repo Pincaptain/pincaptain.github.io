@@ -17,6 +17,8 @@ $('.four-oh-four-form').on('submit', function (e) {
 
     if (val === 'kittens') {
         showKittens();
+    } else if (val.startsWith('/')) {
+        window.location = 'https://pincaptain.github.io' + val;
     } else {
         resetForm();
     }
